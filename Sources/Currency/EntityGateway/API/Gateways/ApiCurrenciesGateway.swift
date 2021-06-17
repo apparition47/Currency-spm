@@ -7,18 +7,12 @@ protocol ApiCurrenciesGateway: CurrenciesGateway {
 
 class ApiCurrenciesGatewayImplementation: ApiCurrenciesGateway {
     
-    private(set) var _apiKey: String
+    let apiKey: String
 
     init(apiKey: String) {
-        self._apiKey = apiKey
+        self.apiKey = apiKey
     }
-    
-    // MARK: - ApiCurrenciesGateway
-    
-    var apiKey: String {
-        _apiKey
-    }
-    
+
     // MARK: - CurrenciesGateway
     
     func live(completion: @escaping LiveCurrenciesEntityGatewayCompletionHandler) {

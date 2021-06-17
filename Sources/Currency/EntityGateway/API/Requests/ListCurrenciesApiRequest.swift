@@ -1,14 +1,10 @@
 import Foundation
 
 struct ListCurrenciesApiRequest: ApiCallRequest {
-    private(set) var _accessKey: String
+    let accessKey: String
     
     init(apiKey: String) {
-        _accessKey = apiKey
-    }
-    
-    var accessKey: String {
-        _accessKey
+        self.accessKey = apiKey
     }
     
     var path: String {
